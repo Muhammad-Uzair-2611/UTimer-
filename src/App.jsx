@@ -20,7 +20,9 @@ function App() {
 
   const handleReset = () => {
     setCurrentTime(0);
+    setIsRunning(false);
     localStorage.setItem('currentTime', '0');
+    localStorage.setItem('isRunning', 'false');
   };
 
   // Save current time to localStorage whenever it changes

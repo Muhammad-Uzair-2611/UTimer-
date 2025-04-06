@@ -18,6 +18,11 @@ function App() {
   
   const [isEditing, setIsEditing] = useState(!localStorage.getItem('targetTime'));
 
+  const handleReset = () => {
+    setCurrentTime(0);
+    localStorage.setItem('currentTime', '0');
+  };
+
   // Save current time to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('currentTime', currentTime.toString());
@@ -160,6 +165,12 @@ function App() {
                     }`}
                 >
                   {isRunning ? 'Pause' : 'Start'}
+                </button>
+                <button
+                  onClick={handleReset}
+                  className="w-full sm:w-auto px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 cursor-pointer"
+                >
+                  Reset
                 </button>
                 <button
                   onClick={() => !isRunning && setIsEditing(true)}

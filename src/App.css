@@ -1,0 +1,126 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.timer-container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.time-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.time-section {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: transform 0.2s;
+}
+
+.time-section:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.time {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  font-family: monospace;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.controls {
+  margin-top: 2rem;
+}
+
+button {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+  min-width: 120px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+button.pause {
+  background: linear-gradient(45deg, #ff4444, #cc0000);
+}
+
+button.edit-btn {
+  background: linear-gradient(45deg, #2196F3, #1976D2);
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  min-width: 80px;
+}
+
+.target-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="time"] {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+  color: white;
+  font-size: 1.2rem;
+  width: 150px;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .time-display {
+    grid-template-columns: 1fr;
+  }
+  
+  .time {
+    font-size: 1.8rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
